@@ -14,5 +14,5 @@ RESTful API для автоматизации управления библио�
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ>
+   git clone https://github.com/Shinshalievaaa/Diploma_library_management_system.git
    cd Diploma_library_management_system

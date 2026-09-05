@@ -5,9 +5,9 @@ services:
     image: postgres:15-alpine
     container_name: library_db
     environment:
-      POSTGRES_DB: library_db
-      POSTGRES_USER: library_user
-      POSTGRES_PASSWORD: library_password
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
@@ -23,14 +23,8 @@ services:
       - .:/app
     ports:
       - "8000:8000"
-    environment:
-      - DEBUG=1
-      - SECRET_KEY=django-insecure-super-secret-key-for-diploma
-      - DB_NAME=library_db
-      - DB_USER=library_user
-      - DB_PASSWORD=library_password
-      - DB_HOST=db
-      - DB_PORT=5432
+    env_file:
+      - .env
     depends_on:
       - db
 
